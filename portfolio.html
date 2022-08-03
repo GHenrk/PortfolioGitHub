@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage || GitHubApi</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link rel="stylesheet" href="assets/css/sobre.css">
+
+  </head>
+  <body >
+    <div class="loadingDiv" id="loadingDiv">
+      <h1>Loading...</h1>
+    </div>
+    <div class="conteudo-page" id="conteudo-page">
+    <header class="cabecalho">
+      <h1 class="nomePerfil" id="nome">Gustavo Henrique Dias</h1>
+      <button class="btnSair" id="btnSair">Sair</button>
+      <!-- talvez um nav ? -->
+    </header>
+    <section class="sobre">
+    <div class="imgSobre">
+        <img src="../assets/imgs/perfil2.jpg" class="foto--perfil" id="foto" />
+    </div>
+      <p class="userBio" id="userBio"></p>
+      <p class="userLocation" id="userLocation"></p>
+      
+      <div class="following">
+        <h3 class="titulo-seguir">Following:</h3>
+        <ul class="listaSeguindo lista" id="following"></ul>
+      </div>
+      <div class="followers">
+        <h3 class="titulo-seguir">Followers:</h3>
+        <ul class="listaSeguidores lista" id="followers"></ul>
+      </div>
+      
+    </section>
+  <section class="projetos">
+    <h3>My Projects:</h3>
+    <ul class="listaProjetos" id="projects"></ul>
+  </section>
+</section>
+    <script type="text/javascript" src="assets/js/api_github.js"></script>
+  </body>
+
+   
+</html>
