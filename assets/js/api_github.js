@@ -70,9 +70,9 @@ function mostraProjects(repos) {
     let verificaDescription =
       elemento.description == null ? " " : elemento.description;
     let elementoNome = `<li class="projetoCard"><a href="${elemento.html_url}" target="_blank"<p class="projectName">${elemento.name}</p></a>`;
-    let elementoNomeOwner = `<a href="${nomeDev.html_url}"><p class="projectNameDev">Desenvolvido por: ${nomeDev.login}</p></a>`;
-    let elementoDescription = `<p class="projectDescription">${verificaDescription}</p><p class="projectLanguage">Linguagem mais utilizada:${elemento.language}</p>`;
-    let elementoProjeto = `<a href="${elemento.homepage}" class="linkDeploy" target="_blank"><p class="projectDeploy">Vizualize o Projeto Online</p></a>`;
+    let elementoNomeOwner = `<a href="${nomeDev.html_url}"><p class="projectNameDev">Desenvolvido por: <span class="nameDev">${nomeDev.login}</span></p></a>`;
+    let elementoDescription = `<p class="projectDescription">${verificaDescription}</p><p class="projectLanguage">Linguagem mais utilizada:<span class="nameLanguage"> ${elemento.language}</span></p>`;
+    let elementoProjeto = `<div class="vizualizeProjeto"><img class="imgVizualize shake-vertical" src="/assets/img/setabaixo.png"><a href="${elemento.homepage}" class="linkDeploy" target="_blank"><p class="projectDeploy">Vizualize o Projeto Online</p></a><img class="imgVizualize shake-vertical" src="/assets/img/setabaixo.png"></div>`;
     let elementoIframe = `<iframe src="${elemento.homepage}" class="windowProject"></li>`;
 
     let elementoTotal =
@@ -106,11 +106,18 @@ const verificaResponse = (response) => {
 };
 
 const apresentaErro = () => {
-  let elementoErro = document.getElementById("loadingText");
+  let elementoErro = document.getElementById("loadingDiv");
   elementoErro.innerHTML = `<h1>Algo deu errado na requisição, por favor tente novamente!!!</h1>`;
 };
 
-const recebePerfil = fetch("https://api.github.com/users/GHenrk")
+// const perfil = "GHenrk"
+const urlPerfil = `https://api.github.com/users/GHenrk`;
+
+
+const myHeader = new Headers();
+myHeader.append('Authorization', 'token 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');
+
+const recebePerfil = fetch(urlPerfil, {header : myHeader})
   .then((response) => {
     console.log(response.ok);
     console.log(response.status);
@@ -118,7 +125,7 @@ const recebePerfil = fetch("https://api.github.com/users/GHenrk")
     return response.json();
   })
   .then((data) => {
-    //console.log(data);
+    console.log(data);
     renderiza_foto(data.avatar_url);
     mostraNome(data.name);
     mostraBioLocal(data.bio, data.location);
@@ -129,7 +136,9 @@ const recebePerfil = fetch("https://api.github.com/users/GHenrk")
   })
   .finally((finalizar) => {});
 
-const recebeSeguidor = fetch("https://api.github.com/users/GHenrk/followers")
+  const urlSeguidor = `https://api.github.com/users/GHenrk/followers`
+
+const recebeSeguidor = fetch(urlSeguidor , {header: myHeader})
   .then((response) => {
     verificaResponse(response);
     return response.json();
@@ -144,7 +153,8 @@ const recebeSeguidor = fetch("https://api.github.com/users/GHenrk/followers")
   })
   .finally((finalizar) => {});
 
-const recebeSeguindo = fetch("https://api.github.com/users/GHenrk/following")
+const urlSeguindo = `https://api.github.com/users/GHenrk/following`;
+const recebeSeguindo = fetch(urlSeguindo, { header: myHeader})
   .then((response) => {
     verificaResponse(response);
     return response.json();
@@ -158,7 +168,11 @@ const recebeSeguindo = fetch("https://api.github.com/users/GHenrk/following")
   })
   .finally((finalizar) => {});
 
-const recebeRepos = fetch("https://api.github.com/users/GHenrk/repos")
+
+
+const urlRepos = `https://api.github.com/users/GHenrk/repos`;
+
+const recebeRepos = fetch(urlRepos, {header: myHeader})
   .then((response) => {
     verificaResponse(response);
     return response.json();
@@ -172,4 +186,4 @@ const recebeRepos = fetch("https://api.github.com/users/GHenrk/repos")
     console.error("ERROR: " + error);
   })
   .finally();
-// clearInterval(verificaResponse);
+

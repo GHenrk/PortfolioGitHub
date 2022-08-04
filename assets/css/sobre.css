@@ -53,6 +53,7 @@ body {
   grid-column: 3;
   grid-row: 1 / span 2;
   text-align: center;
+
 }
 
 .followers {
@@ -60,6 +61,7 @@ body {
   grid-column: 4;
   grid-row: 1 / span 2;
   text-align: center;
+
 }
 
 .titulo-seguir {
@@ -69,6 +71,7 @@ body {
   padding: 0.5em 0;
   background-color: var(--corHeader);
   border: 1px solid #a9a8a8;
+  margin: 0 1em;
 }
 
 .lista {
@@ -83,15 +86,16 @@ body {
   justify-content: center;
   align-self: center;
   gap: 1em;
+  margin: 0 1em;
   padding: 2em 0;
 }
 .listaSeguindo li,
 .listaSeguidores li {
   background-color: black;
-  box-shadow: 0px 0px 5px blue;
-  border: 1px solid black;
+  border: 1px solid #a9a8a8;
   text-align: center;
-  padding: 0.5em;
+  padding: 0.5em 0;
+
 }
 
 .foto--seguidor {
@@ -99,92 +103,3 @@ body {
   border-radius: 50%;
 }
 
-.projetos {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 2em;
-
-  background-color: var(--corHeader);
-  box-sizing: border-box;
-  border-radius: 25px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.listaProjetos {
-  width: 80%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.projetoCard {
-  width: 100%;
-  display: grid;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 4em 5em 4em 1fr;
-  background-color: #a9a8a8;
-
-  margin: 2em;
-  border-radius: 25px;
-}
-
-.projectName {
-  grid-column: 1;
-  grid-row: 1;
-
-  background-color: #373535;
-  text-align: center;
-  padding: 1.2em 0;
-  color: white;
-}
-.projectNameDev {
-  grid-column: 2;
-  grid-row: 1;
-
-  background-color: #373535;
-  text-align: center;
-  padding: 1.5em 0;
-  color: white;
-  box-sizing: border-box;
-}
-
-.projectDescription {
-  grid-column: 1;
-  grid-row: 2;
-  padding: 1em 0;
-
-  text-align: center;
-}
-
-.projectLanguage {
-  grid-column: 2;
-  grid-row: 2;
-  padding: 1em 0;
-  text-align: center;
-}
-
-.projectDeploy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.linkDeploy {
-  grid-column: 1 / span 2;
-  grid-row: 3;
-  display: flex;
-  justify-content: center;
-}
-.windowProject {
-  grid-column: 1 / span 2;
-  grid-row: 4;
-  margin: 0 auto;
-  width: 50vw;
-  height: 25vw;
-}
