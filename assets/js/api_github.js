@@ -72,7 +72,7 @@ function mostraProjects(repos) {
     let elementoNome = `<li class="projetoCard"><a href="${elemento.html_url}" target="_blank"<p class="projectName">${elemento.name}</p></a>`;
     let elementoNomeOwner = `<a href="${nomeDev.html_url}"><p class="projectNameDev">Desenvolvido por: <span class="nameDev">${nomeDev.login}</span></p></a>`;
     let elementoDescription = `<p class="projectDescription">${verificaDescription}</p><p class="projectLanguage">Linguagem mais utilizada:<span class="nameLanguage"> ${elemento.language}</span></p>`;
-    let elementoProjeto = `<div class="vizualizeProjeto"><img class="imgVizualize shake-vertical" src="/assets/img/setabaixo.png"><a href="${elemento.homepage}" class="linkDeploy" target="_blank"><p class="projectDeploy">Vizualize o Projeto Online</p></a><img class="imgVizualize shake-vertical" src="/assets/img/setabaixo.png"></div>`;
+    let elementoProjeto = `<div class="vizualizeProjeto"><img class="imgVizualize shake-vertical" src="./assets/img/setabaixo.png"><a href="${elemento.homepage}" class="linkDeploy" target="_blank"><p class="projectDeploy">Vizualize o Projeto Online</p></a><img class="imgVizualize shake-vertical" src="./assets/img/setabaixo.png"></div>`;
     let elementoIframe = `<iframe src="${elemento.homepage}" class="windowProject"></li>`;
 
     let elementoTotal =
